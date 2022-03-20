@@ -9,21 +9,7 @@
     margin: 0 auto;
 }
 
-.header {
-    grid-area: head;
-    background-color: green;
-}
-
-.nav {
-    grid-area: nav;
-    background-color: yellow;
-}
-
-.content {
+.app-wrapper-content {
     grid-area: cont;
-    background-color: blue;
-}
-
-.header img {
-    width: 20px;
+    background-color: aqua;
 }
