@@ -1,6 +1,10 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 6fr 10fr;
+}
+
+.avatar {
+    width: 30px;
 }
 
 .dialogItems {

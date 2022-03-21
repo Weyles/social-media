@@ -6,20 +6,27 @@ import Message from './message/Message';
 // import { messageData } from '../..';
 
 export default function Dialogs(props) {
-const dialogElements = props.userData.map((user) => <Dialog name={user.name} id={user.id} />);
-const messageElements = props.messageData.map((data) => (
+  const dialogElements = props.state.users.map((user) => <Dialog avatar={user.avatar} name={user.name} id={user.id} />);
+  const messageElements = props.state.dialogs.map((data) => (
   <Message message={data.message} />
-));
+  ));
 
-// Данный масив выводится в конструкции выше
-// const dialogElements = [
-//   <Dialog name={userData[0].name} id={userData[0].id} />,
-//   <Dialog name={userData[1].name} id={userData[1].id} />,
-//   <Dialog name={userData[2].name} id={userData[2].id} />,
-//   <Dialog name={userData[3].name} id={userData[3].id} />,
-//   <Dialog name={userData[4].name} id={userData[4].id} />,
-//   <Dialog name={userData[5].name} id={userData[5].id} />,
-// ];
+  let newMessage = React.createRef();
+  // let message = newMessage.current.value;
+
+
+  /*В атрибуте onChange находится такая же функция, ее суть принимать функцию из state и вводить в нее нужные данные
+  основной функционал находится в state тут всего лишь идет передача данных, потому функцию можно уместить в одну строку
+  Вжно заметить как функция переносится внутрь атрибута под предлогом второй функции*/
+  
+  let addMessage = () => {
+    props.addMessage();
+    props.updateNewMessageText("");
+  }
+
+function handleChange() {
+  props.updateNewMessageText(newMessage.current.value);
+}
 
   return (
     <div className={styles.dialogs}>
@@ -27,6 +34,9 @@ const messageElements = props.messageData.map((data) => (
           {dialogElements}
         </div>
         <div className={styles.messages}>
+          <div>
+            <textarea onChange={handleChange} value={props.state.newMessage} ref={newMessage} /> <button onClick={addMessage}>Enter</button>
+          </div>
           {messageElements}
         </div>
     </div>

@@ -8,12 +8,19 @@ export default function MyPosts(props) {
     <Post post={post.text} likesCount={post.likesCount} />
   ));
 
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    let text = newPostElement.current.value;
+    alert(text);
+  }
+
   return (
     <div>
         My posts
-        <textarea />
+        <textarea ref={newPostElement} />
         <div>
-          <button>Enter</button>
+          <button onClick={addPost} >Enter</button>
         </div>
           {postElements}
     </div>

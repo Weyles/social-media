@@ -6,7 +6,10 @@ const Dialog = (props) => {
     let path = '/dialogs/' + props.id;
     return(
       <div className={styles.dialog}>
-        <NavLink to={path}>{props.name}</NavLink>
+        <NavLink to={path}>
+          <img className={styles.avatar} src={props.avatar} />
+          {props.name}
+        </NavLink>
       </div>
     );
 }

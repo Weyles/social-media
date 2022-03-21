@@ -8,6 +8,7 @@ import Dialogs from "./components/dialogs/Dialogs";
 import News from "./components/news/News"
 import Music from "./components/music/Music"
 import Settings from "./components/settings/Settings"
+import Friends from "./components/friends/Friends";
 
 
 
@@ -15,14 +16,15 @@ function App(props) {
   return (
       <div className="app-wrapper">
         <Header />
-        <Navbar />
+        <Navbar state={props.appState.messagePage}/>
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile/*" element={<Profile postData={props.postData} />} />
-            <Route path="/dialogs/*" element={<Dialogs userData={props.userData} messageData={props.messageData} />} />
+            <Route path="/profile/*" element={<Profile state={props.appState.profilePage} />} />
+            <Route path="/dialogs/*" element={<Dialogs updateNewMessageText={props.updateNewMessageText} addMessage={props.addMessage} state={props.appState.messagePage} />} />
             <Route path="/news/*" element={<News />} />
             <Route path="/music/*" element={<Music />} />
             <Route path="/settings/*" element={<Settings />} />
+            <Route path="/friends/*" element={<Friends state={props.appState.messagePage}/>} />
           </Routes>
         </div>
       </div>

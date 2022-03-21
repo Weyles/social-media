@@ -1,8 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from "./Navbar.module.css"
+import FriendIcon from './friend-icon/FriendIcon'
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <nav className={styles.navigation}>
         <div>
@@ -29,6 +30,12 @@ export default function Navbar() {
           <NavLink to="/settings">
             Settings
           </NavLink>
+        </div>
+        <div>
+          <NavLink to="/friends">
+            Friends
+          </NavLink>
+          <FriendIcon  state={props.state}/>
         </div>
       </nav>
   )
