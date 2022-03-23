@@ -3,12 +3,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import store from './redux/State';
+import store from './redux/redux-store';
 
 export default function rerenderEntireTree(state) {
     ReactDOM.render(
       <BrowserRouter>
-        <App updateNewMessageText={store.updateNewMessageText.bind(store)} appState={store.getState()} addMessage={store.addMessage.bind(store)}/>
+        <App store={store}/>
       </BrowserRouter>,
       document.getElementById('root')
     );

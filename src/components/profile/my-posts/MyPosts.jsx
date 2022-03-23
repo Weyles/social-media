@@ -1,26 +1,28 @@
 import React from 'react'
-import Post from './post/Post'
-// import { postData } from '../../..';
+import Post from "./post/Post"
 import styles from "./MyPosts.module.css"
 
 export default function MyPosts(props) {
-  const postElements = props.postData.map((post) => (
+  const postElements = props.posts.map((post) => (
     <Post post={post.text} likesCount={post.likesCount} />
   ));
 
   let newPostElement = React.createRef();
 
-  let addPost = () => {
-    let text = newPostElement.current.value;
-    alert(text);
+  function handlerChange() {
+    props.onHandlerChange(newPostElement.current.value);
+  }
+
+  function addPost() {
+    props.onAddPost()
   }
 
   return (
     <div>
         My posts
-        <textarea ref={newPostElement} />
+        <textarea value={props.newPost} onChange={handlerChange} ref={newPostElement} />
         <div>
-          <button onClick={addPost} >Enter</button>
+          <button onClick={addPost}>Enter</button>
         </div>
           {postElements}
     </div>

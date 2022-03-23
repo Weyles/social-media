@@ -1,4 +1,7 @@
 // import rerenderEntireTree from './../index'
+import messageReducer from "./message-reducer";
+import profileReducer from "./profile-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 let store = {
   _state: {
@@ -35,6 +38,7 @@ let store = {
           likesCount: 30,
         },
       ],
+      newPost: "test",
     },
     messagePage: {
       dialogs: [
@@ -96,29 +100,25 @@ let store = {
         },
       ],
       newMessage: "test",
-    }
+    },
+    sidebar: {},
+  },
+  _callUpdate() {
+    console.log("something");
   },
   getState() {
     return this._state;
   },
-  _callSubscriber() {
-    console.log("something");
-  },
-  addMessage() {
-    store.getState().messagePage.dialogs.push({
-      id: 5,
-      message: store.getState().messagePage.newMessage,
-    })
-    store.getState().messagePage.newMessage = "";
-    store._callSubscriber(store.getState());
-  },
-  updateNewMessageText(newText) {
-    store.getState().messagePage.newMessage = newText;
-    store._callSubscriber(store.getState());
-  },
   subscribe(observer) {
-    store._callSubscriber = observer;
+    store._callUpdate = observer;
   },
+  dispatch(action) {
+    this._state.profilePage = profileReducer(this._state.profilePage, action); //Данная функция возвращает state, потому мы и можем ее сюда записать
+    this._state.messagePage = messageReducer(this._state.messagePage, action);
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+    this._callUpdate(this._state);
+  }
 }
 
 export default store;
