@@ -38,18 +38,27 @@ let initialState = {
 };
 
 export default function profileReducer(state = initialState, action) {
+  /*Тут желательно переменные не создавать ибо редюсер диспачится в любом случае, 
+  и всякий раз когда он будет диспачится будет создаваться эта переменная */
   switch(state, action.type) {
-    case ADD_POST:
-      state.posts.push({
+    case ADD_POST: {
+      let newPost = {
         id: 7,
         text: state.newPost,
         likesCount: 0,
-      })
-      state.newPost = '';
-      return state;
-    case UPDATE_NEW_POST_MESSAGE:
-      state.newPost = action.newPostText;
-      return state;
+      };
+      //Следующее выражение показывает как правильно копировать сложные данные:
+      return {
+        ...state,
+        newPost: '',
+        posts: [...state.posts, newPost],
+      };
+    }
+    case UPDATE_NEW_POST_MESSAGE: {
+      let stateCopy = {...state};
+      stateCopy.newPost = action.newPostText;
+      return stateCopy;
+    }
     default:
       return state;
     }  

@@ -65,16 +65,22 @@ let initialState = {
 
 export default function messageReducer(state = initialState, action) {
     switch(action.type) {
-        case ADD_MESSAGE:
-            state.dialogs.push({
-                id: 5,
-                message: state.newMessage,
-            });
-            state.newMessage = "";
-            return state;
-        case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessage = action.newMessageText;
-            return state;
+        case ADD_MESSAGE: {
+            let newMessage = {
+              id: 5,
+              message: state.newMessage,
+            }
+            let stateCopy = {...state};
+            stateCopy.dialogs = [...state.dialogs];
+            stateCopy.dialogs.push(newMessage);
+            stateCopy.newMessage = "";
+            return stateCopy;
+        }
+        case UPDATE_NEW_MESSAGE_TEXT: {
+            let stateCopy = {...state};
+            stateCopy.newMessage = action.newMessageText;
+            return stateCopy;
+          } 
         default:
             return state;
     }

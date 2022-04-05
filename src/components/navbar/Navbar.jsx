@@ -17,6 +17,11 @@ export default function Navbar(props) {
           </NavLink>
         </div>
         <div>
+          <NavLink to="/users">
+            Users
+          </NavLink>
+        </div>
+        <div>
           <NavLink to="/news">
             News
           </NavLink>
