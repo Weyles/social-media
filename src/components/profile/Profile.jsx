@@ -5,9 +5,21 @@ import ProfileInfo from './profile-info/ProfileInfo'
 
 export default function Profile(props) {
   return (
-    <div className={styles.content}>
-      <ProfileInfo/>
-      <MyPostsContainer store={props.store}/>
+    <div className={styles.main}>
+      <div className={styles.content}>
+        <div className={styles.newsContainer}>
+            {/* <ProfileInfo/> */}
+            <MyPostsContainer store={props.store}/>
+        </div>
+        <div className={styles.remindersContainer}>
+          <div className={styles.reminders}>
+            Reminders
+          </div>
+        </div>
+      </div>
+      <div className={styles.recomendation}>
+        Recomendations
+      </div>
     </div>
   )
 }

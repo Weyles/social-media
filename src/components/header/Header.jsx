@@ -4,8 +4,12 @@ import styles from "./Header.module.css"
 export default function Header() {
   return (
     <header className={styles.header}>
-       <div>
-        <img className={styles.logo} alt="img" src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"/>
+       <div className={styles.image}>
+        <img 
+          className={styles.logo} 
+          alt="img" 
+          src="https://i0.wp.com/www.primefaces.org/wp-content/uploads/2017/09/feature-react.png?ssl=1"
+        />
        </div>
       </header>
   )

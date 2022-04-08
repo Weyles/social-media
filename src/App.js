@@ -15,17 +15,21 @@ function App(props) {
   return (
       <div className="app-wrapper">
         <Header />
-        <Navbar state={props.store.getState().messagePage}/>
-        <div className="app-wrapper-content">
-          <Routes>
-            <Route path="/profile/*" element={<Profile />} />
-            <Route path="/dialogs/*" element={<DialogsContainer />} />
-            <Route path="/users" element={<UsersContainer />} />
-            <Route path="/news/*" element={<News />} />
-            <Route path="/music/*" element={<Music />} />
-            <Route path="/settings/*" element={<Settings />} />
-            <Route path="/friends/*" element={<Friends state={props.store.getState().messagePage}/>} />
-          </Routes>
+        <div className="app-content">
+          <div className="app-navbar">
+            <Navbar state={props.store.getState().messagePage}/>
+          </div>
+          <div className="app-wrapper-content">
+            <Routes>
+              <Route path="/profile/*" element={<Profile />} />
+              <Route path="/dialogs/*" element={<DialogsContainer />} />
+              <Route path="/users" element={<UsersContainer />} />
+              <Route path="/news/*" element={<News />} />
+              <Route path="/music/*" element={<Music />} />
+              <Route path="/settings/*" element={<Settings />} />
+              <Route path="/friends/*" element={<Friends state={props.store.getState().messagePage}/>} />
+            </Routes>
+          </div>
         </div>
       </div>
   );

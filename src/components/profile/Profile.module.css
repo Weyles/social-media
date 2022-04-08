@@ -1,0 +1,25 @@
+.main {
+    display: flex;
+}
+
+.content {
+    width: 75%;
+    padding: 20px;
+    background-color: rgb(245 245 248);
+    border-radius: 20px 20px 0 0;
+    height: 670px;
+    display: flex;
+}
+
+.recomendation {
+    width: 25%;
+}
+
+.newsContainer {
+    width: 67%;
+}
+
+.remindersContainer {
+    width: 33%;
+    margin-left: 20px;
+}

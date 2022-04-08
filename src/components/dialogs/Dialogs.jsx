@@ -8,7 +8,7 @@ import Message from './message/Message';
 export default function Dialogs(props) {
   const dialogElements = props.dialogElements.map((user) => <Dialog avatar={user.avatar} name={user.name} id={user.id} />);
   const messageElements = props.messageElements.map((data) => (
-  <Message message={data.message} />
+  <Message message={data.message} avatar={data.avatar} id={data.id}/>
   ));
 
   // let newMessage = React.createRef();
@@ -34,10 +34,18 @@ function handleChange(e) {
         <div className={styles.dialogItems}>
           {dialogElements}
         </div>
-        <div className={styles.messages}>
-          {messageElements}
-          <div>
-            <textarea onChange={handleChange} value={props.newMessage} placeholder="Enter your message" /> <button onClick={addMessage}>Enter</button>
+        <div className={styles.messagesContainer}>
+          <div className={styles.messages}>
+            {messageElements}
+          </div>
+          <div className={styles.area}>
+            <textarea 
+              className={styles.textarea}
+              onChange={handleChange} 
+              value={props.newMessage} 
+              placeholder="Enter your message" 
+            /> 
+            <button className={styles.button} onClick={addMessage}>Enter</button>
           </div>
         </div>
     </div>

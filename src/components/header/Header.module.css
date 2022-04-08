@@ -1,8 +1,18 @@
 .header {
     grid-area: head;
-    background-color: green;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+    z-index: 5;
 }
 
 .logo {
-    width: 20px;
+    width: 40px;
+}
+
+.image {
+    margin-left: 20px;
 }

@@ -1,47 +1,61 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from "./Navbar.module.css"
-import FriendIcon from './friend-icon/FriendIcon'
+// import FriendIcon from './friend-icon/FriendIcon'
 
 export default function Navbar(props) {
   return (
     <nav className={styles.navigation}>
-        <div>
-          <NavLink to="/profile">
-            Profile
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to="/dialogs">
-            Messages
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to="/users">
-            Users
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to="/news">
-            News
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to="/music">
-            Music
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to="/settings">
-            Settings
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to="/friends">
-            Friends
-          </NavLink>
-          <FriendIcon  state={props.state}/>
-        </div>
+        <NavLink className={styles.links} to="/profile">
+          <div className={styles.items}>
+            <div className={styles.text}>
+              Profile
+            </div>
+          </div> 
+        </NavLink>
+        <NavLink className={styles.links} to="/dialogs">
+          <div className={styles.items}>
+            <div className={styles.text}>
+              Messages
+            </div>
+          </div>
+        </NavLink>
+        <NavLink className={styles.links} to="/users">
+          <div className={styles.items}>
+            <div className={styles.text}>
+              Users
+            </div>
+          </div>
+        </NavLink>
+        <NavLink className={styles.links} to="/news">
+          <div className={styles.items}>
+            <div className={styles.text}>
+              News
+            </div>
+          </div>
+        </NavLink>
+        <NavLink className={styles.links} to="/music">
+          <div className={styles.items}>
+            <div className={styles.text}>
+              Music
+            </div>
+          </div>
+        </NavLink>
+        <NavLink className={styles.links} to="/settings">
+          <div className={styles.items}>
+            <div className={styles.text}>
+              Settings
+            </div>
+          </div>
+        </NavLink>
+        <NavLink className={styles.links} to="/friends">
+          <div className={styles.items}>
+            <div className={styles.text}>
+              Friends
+            </div>
+          </div>
+        </NavLink>
+          {/* <FriendIcon  state={props.state}/> */}
       </nav>
   )
 }

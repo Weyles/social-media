@@ -1,15 +1,20 @@
 .app-wrapper {
-    display: grid;
-    width: 1200px;
-    grid-template-areas: 
-    "head head"
-    "nav cont";
-    grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr;
     margin: 0 auto;
+    background-color: #fff;
+    min-width: none;
+
 }
 
 .app-wrapper-content {
-    grid-area: cont;
-    background-color: aqua;
+    width: 100%;
+}
+
+.app-content {
+    display: flex;
+}
+
+.app-navbar {
+    width: 220px;
+    position: sticky;
+    top: 0px
 }

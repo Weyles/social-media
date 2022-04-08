@@ -1,5 +1,37 @@
 .navigation {
     grid-area: nav;
-    background-color: yellow;
+    background-color: white;
+    padding: 0 20px;
+    position: sticky;
+    top: 50px
 }
+
+.link {
+    display: block;
+    width: 200px;
+}
+
+.items {
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(78	93	120);
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.text {
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+.items:hover {
+    background-color: rgb(78	93	120);
+    color: #fff;
+}
+
 
