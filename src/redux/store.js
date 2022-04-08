@@ -131,3 +131,4 @@ window.store = store;
 
 
 // export default this._state;
+//Этот файл всего лишь пример работы библиотеки redux

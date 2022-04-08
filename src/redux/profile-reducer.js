@@ -61,7 +61,7 @@ export default function profileReducer(state = initialState, action) {
     }
     default:
       return state;
-    }  
+    } 
   }
 
   export let addPostActionCreator = () => {
