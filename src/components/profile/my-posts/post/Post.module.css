@@ -1,3 +1,22 @@
 .avatar {
-    width: 40px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    margin-left: 16px;
+}
+
+.likes {
+    margin-top: 10px;
+}
+
+.text {
+    word-wrap: break-word;  
+    margin-top: 10px;
 }

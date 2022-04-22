@@ -4,14 +4,7 @@
     padding: 16px;
     box-shadow: 0 6px 20px 0 rgb(236, 236, 237), 0 6px 20px 0 rgb(236, 236, 237);
     margin-bottom: 20px;
-}
-
-.profile {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 16px;
-    box-shadow: 0 6px 20px 0 rgb(236, 236, 237), 0 6px 20px 0 rgb(236, 236, 237);
-    margin-bottom: 20px;
+    min-width: 370px;
 }
 
 .textarea {
@@ -45,9 +38,9 @@
 }
 
 .loadButton {
+    color: rgb(78	93	120	);
     background-color: #ffffff;
     border: none;
-    color: rgb(0, 0, 0);
     border-radius: 61px;
     padding: 10px 16px;
     text-align: center;
@@ -76,4 +69,8 @@
     cursor: pointer;
     height: 40px;
     justify-self: flex-end;
+}
+
+.addButton:hover {
+    background-color: #1374d0;
 }

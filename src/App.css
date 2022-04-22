@@ -1,12 +1,11 @@
 .app-wrapper {
     margin: 0 auto;
     background-color: #fff;
-    min-width: none;
-
+    color: rgb(78	93	120	);
 }
 
 .app-wrapper-content {
-    width: 100%;
+    width: 80%;
 }
 
 .app-content {
@@ -14,7 +13,7 @@
 }
 
 .app-navbar {
-    width: 220px;
+    width: 20%;
     position: sticky;
     top: 0px
 }

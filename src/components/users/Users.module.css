@@ -5,3 +5,100 @@
 .selectedPage {
     font-weight: 700;
 }
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    background-color: rgb(245 245 248);
+    border-radius: 20px 20px 0 0;
+    height: 670px;
+    width: 75%;
+    padding: 20px 20px 0 20px;
+}
+
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+.user {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 6px 20px 0 rgb(236, 236, 237), 0 6px 20px 0 rgb(236, 236, 237);
+    width: 27.00%;
+    height: 108px;
+    margin-bottom: 20px;
+}
+
+.recomendations {
+    width: 25%;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.profile {
+    display: flex;
+    height: 50px;
+}
+
+.info {
+    margin-left: 16px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.location {
+    font-size: 12px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.addButton {
+    background-color: #2495ff;
+    border: none;
+    color: white;
+    border-radius: 61px;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    height: 40px;
+}
+
+.addButton:hover {
+    background-color: #1374d0;
+}
+
+.ignoreButton {
+    color: rgb(78	93	120	);
+    background-color: #ffffff;
+    border: none;
+    border-radius: 61px;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    height: 40px;
+}
+
+.ignoreButton:hover {
+    background-color: rgb(246	247	249	);
+}

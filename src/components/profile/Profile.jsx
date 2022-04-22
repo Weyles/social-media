@@ -17,7 +17,7 @@ export default function Profile(props) {
           </div>
         </div>
       </div>
-      <div className={styles.recomendation}>
+      <div className={styles.recomendations}>
         Recomendations
       </div>
     </div>

@@ -5,7 +5,7 @@ import styles from "./MyPosts.module.css"
 export default function MyPosts(props) {
   const postElements = props.posts.map((post) => (
     <div className={styles.post}>
-      <Post avatar={post.avatar} post={post.text} likesCount={post.likesCount} />
+      <Post name={post.name} avatar={post.avatar} post={post.text} likesCount={post.likesCount} />
     </div>
   ));
 
@@ -20,7 +20,7 @@ export default function MyPosts(props) {
 
   return (
     <div className={styles.content}>
-      <div className={styles.profile}>
+      <div className={styles.post}>
         <div className={styles.info}>
           <img alt="avatar" className={styles.avatar} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUF3CYnR_0RjKeoiPaNKcBQJ8g4jr9MjXTQVIb_9Jkvmx2gOBAa50yI44W4d250zu_9EM&usqp=CAU' />
           <textarea className={styles.textarea} onChange={handleChange} value={props.newPost}/>
@@ -32,7 +32,6 @@ export default function MyPosts(props) {
           <button className={styles.addButton} onClick={addPost}>Add</button>
         </div>
       </div>
-
       <div className={styles.news}>
             {postElements}
       </div>
